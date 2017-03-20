@@ -9,7 +9,7 @@
 
         stage "build"
 
-        def app = docker.build "build-api-router"
+        def app = docker.build "robbybugatti/dom-api-proxy"
 
         stage "publish"
         app.push 'master'
