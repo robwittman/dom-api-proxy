@@ -1,7 +1,7 @@
 node("docker") {
-    docker.withRegistry('<<your-docker-registry>>', '<<your-docker-registry-credentials-id>>') {
+    docker.withRegistry('robbybugatti/dom-api-proxy', 'DOCKER_HUB_ID') {
 
-        git url: "<<your-git-repo-url>>", credentialsId: '<<your-git-credentials-id>>'
+        git url: "https://github.com/robwittman/dom-api-proxy", credentialsId: 'GITCREDS'
 
         sh "git rev-parse HEAD > .git/commit-id"
         def commit_id = readFile('.git/commit-id').trim()
