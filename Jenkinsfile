@@ -1,5 +1,5 @@
 
-    docker.withRegistry('robbybugatti/dom-api-proxy', 'DOCKER_HUB_ID') {
+    docker.withRegistry('https://hub.docker.com/r/robbybugatti/dom-api-proxy/', 'DOCKER_HUB_ID') {
 
         git url: "https://github.com/robwittman/dom-api-proxy", credentialsId: 'GITCREDS'
 
