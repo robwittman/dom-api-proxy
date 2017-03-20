@@ -1,4 +1,4 @@
-node("docker") {
+
     docker.withRegistry('robbybugatti/dom-api-proxy', 'DOCKER_HUB_ID') {
 
         git url: "https://github.com/robwittman/dom-api-proxy", credentialsId: 'GITCREDS'
@@ -15,4 +15,3 @@ node("docker") {
         app.push 'master'
         app.push "${commit_id}"
     }
-}
