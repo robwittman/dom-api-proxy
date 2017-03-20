@@ -41,18 +41,30 @@ proxy_set_header Proxy "";
 # Set our upstream blocks
 # accession
 upstream accession {
+			# nginxproxy_accession_3
+			server 172.30.0.4:80;
+			# nginxproxy_accession_2
+			server 172.30.0.6:80;
 			# nginxproxy_accession_1
-			server 172.30.0.5:80;
+			server 172.30.0.7:80;
 }
 # requisition
 upstream requisition {
 			# nginxproxy_requisition_1
-			server 172.30.0.4:80;
+			server 172.30.0.3:80;
 }
 # root_service
 upstream root_service {
+			# nginxproxy_root_5
+			server 172.30.0.11:80;
+			# nginxproxy_root_4
+			server 172.30.0.10:80;
+			# nginxproxy_root_3
+			server 172.30.0.9:80;
+			# nginxproxy_root_2
+			server 172.30.0.8:80;
 			# nginxproxy_root_1
-			server 172.30.0.3:80;
+			server 172.30.0.5:80;
 }
 # Here is our actual server configuration
 server {
@@ -60,12 +72,12 @@ server {
 	access_log /var/log/nginx/access.log vhost;
 	# Set our API routes
 	location / {
-		proxy_pass http://root_service
+		proxy_pass http://root_service;
 	}
 	location /accession {
-		proxy_pass http://accession
+		proxy_pass http://accession;
 	}
 	location /requisition {
-		proxy_pass http://requisition
+		proxy_pass http://requisition;
 	}
 }
