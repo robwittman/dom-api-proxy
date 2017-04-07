@@ -41,11 +41,20 @@ proxy_set_header Proxy "";
 # Set our upstream blocks
 # accession
 upstream accession {
-			server 172.31.0.3:80;
+			server 172.31.0.14:80;
+			server 172.31.0.13:80;
+			server 172.31.0.12:80;
+			server 172.31.0.10:80;
+			server 172.31.0.9:80;
+			server 172.31.0.11:80;
+			server 172.31.0.7:80;
+			server 172.31.0.8:80;
+			server 172.31.0.6:80;
+			server 172.31.0.5:80;
 }
 # requisition
 upstream requisition {
-			server 172.31.0.5:80;
+			server 172.31.0.3:80;
 }
 # root_service
 upstream root_service {
